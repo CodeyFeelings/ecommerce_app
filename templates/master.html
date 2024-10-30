@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="CodeyFeelings" />
+    <link rel="stylesheet" href="../static/styles.css" />
+    <script src="../static/main.js"></script>
+    <title>Ecommerce App:</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <!-- NAVIGATION BAR -->
+    <nav class="nav-bar">
+      <ul>
+        <div class="left-nav">
+          <li>
+            <a href="/shop"> Shop </a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+    <main>
+      <!-- FLASH MESSAGE -->
+      {% with messages = get_flashed_messages(with_categories=True)%}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="flash-message {{ category }}" id="flash-message">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}      
+      <!-- MAIN CONTENT -->
+      {% block main %}
+      {% endblock %}
+    </main>
+    <footer class="footer-bar">
+      <ul>
+        <div>
+          <li> CodeyFeelings 🥲</li>
+        </div>
+      </ul>
+    </footer>
+    </div>
+  </body>
+</html>

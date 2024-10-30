@@ -1,0 +1,280 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-image: linear-gradient(#cba5e5, #afe0e5);
+  position: relative;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 100%;
+  margin: 30px;
+  background-color: #fff;
+  opacity: 75%;
+  border: #ddd;
+  border-radius: 50px;
+  padding: 15%;
+  box-shadow: 0 2px 5px black;
+  text-align: center;
+}
+/* SECTION: OVERLAY */
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000e6;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.small-container {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 30%;
+  margin-bottom: 30%;
+  padding: 40px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  opacity: 75%;
+  border-radius: 50px;
+  overflow-y: auto;
+  max-height: 100vh;
+  cursor: default;
+
+}
+
+.close-btn {
+  position: relative;
+  float: right;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 10px;
+}
+
+/* SECTION: NAV BAR */
+.nav-bar {
+  display: flex;
+  background-color: #ffc0e7;
+  padding: 10px 20px;
+  justify-content: center;
+}
+.nav-bar ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li {
+  float: left;
+  padding: 1% 2%;
+}
+.nav-bar li a {
+  vertical-align: middle;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 0;
+}
+.nav-bar li a:hover {
+  background-color: white;
+  width: 100%;
+  transform: scale(1.1);
+  opacity: 80%;
+  padding: 10px;
+}
+
+/* SECTION: FOOTER */
+footer {
+  background-color: #ffc0e7;
+  padding: 1em;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-bar ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* SECTION: FLASH MESSAGE */
+.flash-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  border: 1px solid #15ff00;
+  background-color: #e6ffdd;
+}
+
+.error {
+  color: red;
+  border: 1px solid #f00;
+  background-color: #fdd;
+}
+
+/* SECTION: SHOP */
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  margin: 4%;
+  max-width: 100%;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.shop-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fff;
+  opacity: 85%;
+  box-shadow: 0 2px 5px black;
+  border-radius: 50px;
+}
+
+.item-img {
+  object-fit: cover;
+  height: auto;
+  max-height: 70%;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10%;
+}
+
+.price {
+  margin: 10%;
+}
+
+.cart-btn {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  padding: 0;
+}
+
+.cart-img {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s;
+  align-items: end;
+}
+
+.no-stock {
+  color: #e73c94;
+  font-weight: bold;
+}
+
+.more-btn {
+  border: none;
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 16px;
+  margin: 10px;
+}
+
+/* SHOP MEDIA */
+
+@media screen and (min-width: 1500px) {
+  .small-container {
+  width: 30%;
+  }
+
+}
+
+@media screen and (max-width: 944px) {
+  .shop-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10%;
+  }
+  .cart-img {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 785px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+  }
+  .cart-img {
+    width: 50%;
+  }
+
+}
+@media screen and (max-width: 480px) {
+  .shop-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10%;
+  }
+
+}
