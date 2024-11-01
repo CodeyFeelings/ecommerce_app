@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block main %}
+<div class="small-container">
+    <h3 class="page-title">Login</h3>
+    <div class="flash-message {{ category }}" id="flash-message"></div>
+    <div>
+        <form action="/login" class="input-form">
+            <div>
+                <label for="username">Username:</label>
+            </div>
+            <div>
+                <input type="text" name="username"/>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+            </div>
+            <div>
+                <input type="password" name="password"/>
+            </div>
+            <div class="right">
+                <div>
+                    Don't have an account?
+                </div>
+            </div>
+            <div class="row">
+                <button class="submit-btn" type="submit" >Login</button>
+                <a href="/register"><button type="button" class="other-btn">Register</button></a>
+            </div>
+        </form>
+    </div>
+ </div>
+
+ {% endblock %}

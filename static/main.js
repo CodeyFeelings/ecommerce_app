@@ -34,3 +34,38 @@ function closeOverlay(event){
         event.target.style.display = 'none';
     }
 }
+
+// SECTION: REGISTER
+document.querySelectorAll(".input-form").forEach(form =>{
+  form.addEventListener("submit", function (event){
+    event.preventDefault();
+    const formData = new FormData(event.target)
+    const actionUrl = form.getAttribute("action")
+    fetch(actionUrl,{
+      method: "POST",
+      body: formData,
+    }).then(response=> response.json())
+    .then(data =>{
+      console.log("Response data:", data); 
+      if (data.success){
+        window.location.href = data.redirect_url;
+      }else{
+        displayFlashMessage(data.message, "error");
+      }
+    })
+    .catch(error=> console.error("Error:",error));
+})
+})
+
+function displayFlashMessage(message,category){
+  const flashMessage = document.getElementById("flash-message");
+  flashMessage.className = "flash-message";
+  flashMessage.innerText = message;
+  flashMessage.classList.add(category)
+  flashMessage.style.display = "block";
+  
+  setTimeout(()=>{
+    flashMessage.style.display = "none"
+  },4000);
+
+}

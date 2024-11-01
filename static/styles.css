@@ -27,6 +27,11 @@ main {
 button {
   cursor: pointer;
 }
+button:hover{
+  background-color: #3ec4f0;
+  transform: scale(1.1);
+  opacity: 80%;
+}
 
 a {
   cursor: pointer;
@@ -66,8 +71,8 @@ a {
 .small-container {
   width: 40%;
   margin: 0 auto;
-  margin-top: 30%;
-  margin-bottom: 30%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding: 40px;
   border: 1px solid #ddd;
   background-color: #fff;
@@ -102,11 +107,14 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-bar li {
-  float: left;
-  padding: 1% 2%;
+  padding: 10px 20px;
+  margin: 0;
+  display: flex;
 }
 .nav-bar li a {
   vertical-align: middle;
@@ -115,14 +123,35 @@ a {
   text-decoration: none;
   border-radius: 25px;
   padding: 0;
+  justify-content: space-between;
+
 }
 .nav-bar li a:hover {
   background-color: white;
   width: 100%;
+  height: auto;
   transform: scale(1.1);
   opacity: 80%;
   padding: 10px;
+
 }
+.left-nav,
+.right-nav{
+  display: flex;
+  align-items: center;
+}
+
+.nav-cart-img{
+  max-width: 40px;
+  height: 100%;
+  transition: transform 0.3s;
+  padding: 0;
+  margin: 0;
+ vertical-align: middle;
+ align-items: right;
+
+}
+
 
 /* SECTION: FOOTER */
 footer {
@@ -149,6 +178,17 @@ footer {
   text-align: center;
 }
 
+.flash-message.success {
+  color: green;
+  border: 1px solid #15ff00;
+  background-color: #e6ffdd;
+}
+
+.flash-message.error {
+  color: red;
+  border: 1px solid #f00;
+  background-color: #fdd;
+}
 .success {
   color: green;
   border: 1px solid #15ff00;
@@ -201,7 +241,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 10%;
+  vertical-align: middle;
 }
+
 
 .price {
   margin: 10%;
@@ -214,8 +256,6 @@ footer {
   align-items: center;
   justify-content: center;
   position: relative;
-  bottom: 10px;
-  right: 10px;
   border: none;
   border-radius: 50px;
   background: none;
@@ -278,3 +318,48 @@ footer {
   }
 
 }
+
+/* SECTION: LOGIN REGISTER */
+.page-title{
+  text-align: center;
+}
+
+.input-form{
+  width: 100%;
+}
+
+label{
+  text-align: start;
+}
+
+input{
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;  
+}
+
+.right{
+text-align: right;
+}
+
+.submit-btn{
+  border: none;
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 16px;
+  margin: 10px;
+  background-color: #51b399;
+}
+.other-btn{
+  border: none;
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 16px;
+  margin: 10px;
+  background-color: #a136bc;
+}
+
+/* SECTION CART */
+

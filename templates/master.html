@@ -5,21 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="CodeyFeelings" />
     <link rel="stylesheet" href="../static/styles.css" />
-    <script src="../static/main.js"></script>
     <title>Ecommerce App:</title>
   </head>
   <body>
     <div class="wrapper">
     <!-- NAVIGATION BAR -->
-    <nav class="nav-bar">
+     <!-- if user is logged in -->
+      {% if user == "user" %}
+     <nav class="nav-bar">
       <ul>
         <div class="left-nav">
           <li>
             <a href="/shop"> Shop </a>
           </li>
         </div>
+        <div class="right-nav">
+        <li>
+          <a href="/logout"> Logout </a>
+        </li>
+        </div>
       </ul>
     </nav>
+    {% else %}
+     <!-- if user is not logged in -->
+     <nav class="nav-bar">
+      <ul>
+        <div class="left-nav">
+          <li>
+            <a href="/shop"> Shop </a>
+          </li>
+        </div>
+        <div class="right-nav">
+          <li>
+            <a href="/cart"> <img src="../static/uploads/cart-icon.png" class="nav-cart-img"/> </a>
+          </li>
+          <li>
+            <a href="/login"> Login </a>
+          </li>
+            <li>
+          <a href="/register"> Register </a>
+        </li>
+        </div>
+      </ul>
+    </nav>
+    {% endif %}
     <main>
       <!-- FLASH MESSAGE -->
       {% with messages = get_flashed_messages(with_categories=True)%}
@@ -43,5 +72,6 @@
       </ul>
     </footer>
     </div>
+    <script src="../static/main.js"></script>
   </body>
 </html>
